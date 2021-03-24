@@ -44,7 +44,7 @@
         echo "Warna Mobil B adalah ".$mobilB->getWarna();
         echo "<br>";
         echo "Kecepatan Mobil B adalah: ".$mobilB->getKecepatan();
-        $mobilB->tambahKecepatan(10);
+        $mobilB->tambahKecepatan(50);
         echo "<br>";
         echo "Kecepatan Mobil B adalah: ".$mobilB->getKecepatan();
 
