@@ -38,6 +38,15 @@
         echo "<br>";
         echo "Kecepatan Mobil A adalah: ".$mobilA->getKecepatan();
 
+        // Pemanggilan Kelas Child
+        $mobilB = new MobilBalap("Biru");
+        echo "<hr>";
+        echo "Warna Mobil B adalah ".$mobilB->getWarna();
+        echo "<br>";
+        echo "Kecepatan Mobil B adalah: ".$mobilB->getKecepatan();
+        $mobilB->tambahKecepatan(10);
+        echo "<br>";
+        echo "Kecepatan Mobil B adalah: ".$mobilB->getKecepatan();
 
     ?>    
 </body>
