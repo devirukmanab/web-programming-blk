@@ -12,13 +12,33 @@
 </head>
 <body>
     <?php
-        // Pembuatan Objek
-        $pesawatA = new PesawatTerbang();
+        // Pembuatan Objek Warna Pesawat
+        $pesawatA = new PesawatTerbang("Abu-Abu");
+
+        echo "Warna pesawat di awal adalah: ".$pesawatA->getWarna();
+        echo "<br>";
+
         // Memberikan Nilai
         $pesawatA->setWarna("Merah");
 
         // Menampilkan Objek dengan nilai
         echo "Warna pesawat A adalah: ".$pesawatA->getWarna();
+        echo "<hr>";
+
+
+        // Pembuatan Objek Warna dan Kecepatan Mobil
+        $mobilA = new Mobil("Merah");
+        echo "Warna Mobil A adalah: ".$mobilA->getWarna();
+        echo "<br>";
+        echo "Kecepatan Mobil A adalah: ".$mobilA->getKecepatan();
+        $mobilA->tambahKecepatan(20);
+        echo "<br>";
+        echo "Kecepatan Mobil A adalah: ".$mobilA->getKecepatan();
+        $mobilA->tambahKecepatan(30);
+        echo "<br>";
+        echo "Kecepatan Mobil A adalah: ".$mobilA->getKecepatan();
+
+
     ?>    
 </body>
 </html>
