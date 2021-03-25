@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                    <input type="submit" class="btn btn-info btn-block" value="Update">
+                    <input type="submit" class="btn btn-info btn-block" value="Kirim">
                     </div>
                 </form> 
     
