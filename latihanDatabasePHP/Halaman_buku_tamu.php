@@ -67,7 +67,7 @@
                                 <td><?=$row['pesan_tamu'];?></td>
                                 <td align="center">
                                     <!-- Button Delete and Edit -->
-                                    <a href="" class="btn btn-danger btn-sm">
+                                    <a href="Proses_delete_buku_tamu.php?idTamu=<?=$row['id_tamu'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus ini?')">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
                                     <a href="" class="btn btn-dark btn-sm">
