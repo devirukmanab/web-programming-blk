@@ -1,6 +1,15 @@
 <!-- Menghubungkan dengan file SQL yang ingi dituju -->
 <?php
     require_once "MySQL_connection.php";
+
+    $id = $_GET['idTamu'];
+    $sql = "SELECT * FROM tb_tamu WHERE id_tamu='$id'";
+    $result = $conn->query($sql);
+    while($row = $result->fetch_assoc()){
+        $nama = $row['nama_tamu'];
+        $email = $row['email_tamu'];
+        $pesan = $row['pesan_tamu'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,29 +34,36 @@
                 <h3 style="text-align: center;">Form Input Buku Tamu</h3>
             </div>
             <div class="card-body">
-                <form action="Proses_insert_buku_tamu.php" method="POST">
+                <form action="Proses_update_buku_tamu.php" method="POST">
                 <div class="form-group">
                     <input type="text" name="id" class="form-control" readonly value="<?=$_GET['idTamu'];?>" required>
                     </div>
 
                     <div class="form-group">
-                    <input type="text" name="nama" class="form-control" placeholder="Masukkan nama anda" required>
+                    <input type="text" name="nama" class="form-control" placeholder="Masukkan nama anda" required value="<?=$nama?>">
                     </div>
 
                     <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="Masukkan e-mail anda" required>
+                    <input type="email" name="email" class="form-control" placeholder="Masukkan e-mail anda" required value="<?=$email?>">
                     </div>
 
                     <div class="form-group">
-                    <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda"></textarea>
+                    <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda" value="<?=$pesan?>"></textarea>
                     </div>
 
                     <div class="form-group">
-                    <input type="submit" class="btn btn-info btn-block" value="Kirim">
+                    <input type="submit" class="btn btn-info btn-block" value="Update">
                     </div>
                 </form> 
+
+                <div class="card-fooer">
+                    <a href="Halaman_buku_tamu.php" class="btn btn-primary btn-sm" label="Back">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
