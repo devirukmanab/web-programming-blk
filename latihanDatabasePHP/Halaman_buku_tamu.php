@@ -39,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                    <input type="submit" class="btn btn-info btn-block" value="Kirim">
+                    <input type="submit" class="btn btn-info btn-block" value="Update">
                     </div>
                 </form> 
     
@@ -70,7 +70,7 @@
                                     <a href="Proses_delete_buku_tamu.php?idTamu=<?=$row['id_tamu'];?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus ini?')">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </a>
-                                    <a href="" class="btn btn-dark btn-sm">
+                                    <a href="Halaman_edit_buku_tamu.php?idTamu=<?=$row['id_tamu'];?>" class="btn btn-dark btn-sm">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </a>
                                 </td>    
