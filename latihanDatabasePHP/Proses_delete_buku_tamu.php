@@ -10,17 +10,17 @@
     if($conn->query($sql) === true) {
         // header("location:Halaman_buku_tamu.php");
 
-        // Menampilkan Pop Up BERHASIL TERSIMPAN
+        // Menampilkan Pop Up BERHASIL TERHAPUS
         echo "<script>
-                alert('Berhasil tersimpan');
+                alert('Berhasil terhapus');
                 location.assign('Halaman_buku_tamu.php');   
             </script>";
 
         echo "Berhasil terhapus";
     } else {
-        // Menampilkan Pop Up GAGAL TERSIMPAN
+        // Menampilkan Pop Up GAGAL TERHAPUS
         echo "<script>
-                alert('Berhasil tersimpan');
+                alert('Berhasil terhapus');
                 location.assign('Halaman_buku_tamu.php');   
             </script>";
 
