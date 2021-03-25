@@ -43,13 +43,14 @@
                     </div>
                 </form> 
     
-
+                <!-- Membuat Tabel dengan menampilkan isi data -->
                 <table class="table table-bordered">
                     <thead>
                         <tr align="center">
                             <th>No</th> <th>ID</th> <th>Nama</th> <th>Email</th> <th>Pesan/Komentar</th> <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <?php
                         $sql = "SELECT * FROM tb_tamu ORDER BY id_tamu ASC";
@@ -64,14 +65,21 @@
                                 <td><?=$row['nama_tamu'];?></td>
                                 <td><?=$row['email_tamu'];?></td>
                                 <td><?=$row['pesan_tamu'];?></td>
-                                <td align="center"><i class="fa fa-trash" aria-hidden="true"></i> | <i class="fa fa-pencil" aria-hidden="true"></i></td>
+                                <td align="center">
+                                    <!-- Button Delete and Edit -->
+                                    <a href="" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="" class="btn btn-dark btn-sm">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                    </a>
+                                </td>    
                             </tr>
                         <?php
                                 $no++;
                             }
                         }
-                        ?>
-                        
+                        ?>     
                     </tbody>
                 </table>
             </div>
