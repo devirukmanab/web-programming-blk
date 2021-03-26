@@ -1,5 +1,8 @@
 <?php
     require_once "MySQL_connection.php";
+    
+    // Start Session
+    session_start();
 
     $id = $_POST['id'];
     $nama = $_POST['nama'];
@@ -11,7 +14,8 @@
 
     // Eksekusi Perintah
     if($conn->query($sql) === true) {
-        // header("location:Halaman_buku_tamu.php");
+        $_SESSION['update_status'] = 1; //nilai "1"-nya boleh berapa aja
+        header("location:Halaman_buku_tamu.php");
 
         // Menampilkan Pop Up BERHASIL TERSIMPAN
         echo "<script>
