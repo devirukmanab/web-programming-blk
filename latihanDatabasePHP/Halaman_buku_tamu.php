@@ -30,28 +30,41 @@ require_once "MySQL_connection.php";
                 <h3 style="text-align: center;">Form Input Buku Tamu</h3>
             </div>
             <div class="card-body">
-                <form action="Proses_update_buku_tamu.php" method="POST">
+                <form action="Proses_insert_buku_tamu.php" method="POST">
                     <div class="form-group">
-                        <input type="text" name="id" class="form-control edit-id" readonly required>
+                        <input type="text" name="nama" class="form-control" placeholder="Masukkan nama anda" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="nama" class="form-control edit-nama" placeholder="Masukkan nama anda" required>
+                        <input type="email" name="email" class="form-control" placeholder="Masukkan e-mail anda" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control edit-email" placeholder="Masukkan e-mail anda" required>
+                        <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <textarea name="pesan" class="form-control edit-pesan" placeholder="Masukkan pesan dan kesan anda" required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-info btn-block" value="Update">
+                        <input type="submit" class="btn btn-info btn-block" value="Kirim">
                     </div>
                 </form>
+                <hr>
 
+                <?php
+                // Start Session
+                    // session_start();
+                    // if(isset($_SESSION['update_status'])){
+                    //     if($_SESSION['update_status'] == 1){
+                ?>
+                <!-- Alert -->
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Berhasil!</strong> Update Data Berhasil!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+
+                <h2 class="text-success">Data Buku Tamu</h2>
 
                 <!-- Membuat Tabel dengan menampilkan isi data -->
                 <table class="table table-bordered" id="myTable">
@@ -92,7 +105,7 @@ require_once "MySQL_connection.php";
                                             <a href="Halaman_edit_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-dark btn-sm disabled">
                                                 <i class="fa fa-edit" aria-hidden="true"></i>
                                             </a>
-                                        </div>    
+                                        </div>
                                     </td>
                                 </tr>
                         <?php
@@ -115,14 +128,25 @@ require_once "MySQL_connection.php";
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="Proses_update_buku_tamu.php" method="POST">
                             <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control" id="recipient-name">
+                                <input type="text" name="id" class="form-control edit-id" readonly required>
                             </div>
+
                             <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                                <input type="text" name="nama" class="form-control edit-nama" placeholder="Masukkan nama anda" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control edit-email" placeholder="Masukkan e-mail anda" required>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="pesan" class="form-control edit-pesan" placeholder="Masukkan pesan dan kesan anda" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-info btn-block" value="Update">
                             </div>
                         </form>
                     </div>
@@ -162,10 +186,10 @@ require_once "MySQL_connection.php";
                 // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
                 // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
                 var modal = $(this)
-                modal.find('.modal-body edit-id').val(id)
-                modal.find('.modal-body edit-nama').val(nama)
-                modal.find('.modal-body edit-email').val(email)
-                modal.find('.modal-body edit-pesan').val(pesan)
+                modal.find('.modal-body .edit-id').val(id)
+                modal.find('.modal-body .edit-nama').val(nama)
+                modal.find('.modal-body .edit-email').val(email)
+                modal.find('.modal-body .edit-pesan').val(pesan)
             })
         });
     </script>
