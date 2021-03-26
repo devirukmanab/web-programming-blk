@@ -32,19 +32,19 @@ require_once "MySQL_connection.php";
             <div class="card-body">
                 <form action="Proses_update_buku_tamu.php" method="POST">
                     <div class="form-group">
-                        <input type="text" name="id" class="form-control" readonly required>
+                        <input type="text" name="id" class="form-control edit-id" readonly required>
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="nama" class="form-control" placeholder="Masukkan nama anda" required>
+                        <input type="text" name="nama" class="form-control edit-nama" placeholder="Masukkan nama anda" required>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Masukkan e-mail anda" required>
+                        <input type="email" name="email" class="form-control edit-email" placeholder="Masukkan e-mail anda" required>
                     </div>
 
                     <div class="form-group">
-                        <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda" required></textarea>
+                        <textarea name="pesan" class="form-control edit-pesan" placeholder="Masukkan pesan dan kesan anda" required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -87,7 +87,7 @@ require_once "MySQL_connection.php";
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
                                             </a>
 
-                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> <i class="fa fa-edit" aria-hidden="true"></i></button>
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal" data-id="<?= $row['id_tamu']; ?>" data-nama="<?= $row['nama_tamu']; ?>" data-email="<?= $row['email_tamu']; ?>" data-pesan="<?= $row['pesan_tamu']; ?>"> <i class="fa fa-edit" aria-hidden="true"></i></button>
 
                                             <a href="Halaman_edit_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-dark btn-sm disabled">
                                                 <i class="fa fa-edit" aria-hidden="true"></i>
@@ -104,10 +104,6 @@ require_once "MySQL_connection.php";
                 </table>
             </div>
         </div>
-
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button> -->
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -156,14 +152,20 @@ require_once "MySQL_connection.php";
             $('#myTable').DataTable({
                 pageLength: 5,
             });
+            // Javascript untuk memunculkan modal Edit
             $('#exampleModal').on('show.bs.modal', function(event) {
                 var button = $(event.relatedTarget) // Button that triggered the modal
-                var recipient = button.data('whatever') // Extract info from data-* attributes
+                var id = button.data('id') // Extract info from data-* attributes
+                var nama = button.data('nama')
+                var email = button.data('email')
+                var pesan = button.data('pesan')
                 // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
                 // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
                 var modal = $(this)
-                modal.find('.modal-title').text('New message to ' + recipient)
-                modal.find('.modal-body input').val(recipient)
+                modal.find('.modal-body edit-id').val(id)
+                modal.find('.modal-body edit-nama').val(nama)
+                modal.find('.modal-body edit-email').val(email)
+                modal.find('.modal-body edit-pesan').val(pesan)
             })
         });
     </script>
