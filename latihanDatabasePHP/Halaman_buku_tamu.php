@@ -1,6 +1,9 @@
 <!-- Menghubungkan dengan file SQL yang ingi dituju -->
 <?php
 require_once "MySQL_connection.php";
+
+// Start Session
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -51,9 +54,8 @@ require_once "MySQL_connection.php";
 
                 <?php
                 // Start Session
-                    // session_start();
-                    // if(isset($_SESSION['update_status'])){
-                    //     if($_SESSION['update_status'] == 1){
+                    if(isset($_SESSION['update_status'])){
+                        // if($_SESSION['update_status'] == 1){
                 ?>
                 <!-- Alert -->
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -62,7 +64,8 @@ require_once "MySQL_connection.php";
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
+                <?php } ?>
+                
 
                 <h2 class="text-success">Data Buku Tamu</h2>
 
@@ -94,7 +97,7 @@ require_once "MySQL_connection.php";
                                     <td><?= $row['email_tamu']; ?></td>
                                     <td><?= $row['pesan_tamu']; ?></td>
                                     <td align="center">
-                                        <!-- Button Delete and Edit -->
+                                        <!-- Untuk Proses Delete/Edit & Button Delete and Edit -->
                                         <div class="btn-group">
                                             <a href="Proses_delete_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus ini?')">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
@@ -127,6 +130,8 @@ require_once "MySQL_connection.php";
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
+                    <!-- Untuk ke Proses Update -->
                     <div class="modal-body">
                         <form action="Proses_update_buku_tamu.php" method="POST">
                             <div class="form-group">
