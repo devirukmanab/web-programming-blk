@@ -5,29 +5,38 @@
     $email = $_POST['email'];
     $pesan = $_POST['pesan'];
 
+    // Start Session
+    session_start();
+
     // Perintah SQL
     $sql = "INSERT INTO tb_tamu VALUES('', '$nama', '$email', '$pesan')";
 
     // Eksekusi Perintah
     if($conn->query($sql) === true) {
-        // header("location:Halaman_buku_tamu.php");
-
-        // Menampilkan Pop Up BERHASIL TERSIMPAN
-        echo "<script>
-                alert('Berhasil tersimpan');
-                location.assign('Halaman_buku_tamu.php');   
-            </script>";
-
-        echo "Berhasil tersimpan";
+        $_SESSION['update_status'] = 1; //nilai "1"-nya boleh berapa aja
+        $_SESSION['update_message'] = '<strong>Berhasil!</strong> Data berhasil dimasukkan!';
+        header("location:Halaman_buku_tamu.php");
     } else {
-        // Menampilkan Pop Up GAGAL TERSIMPAN
-        echo "<script>
-                alert('Berhasil tersimpan');
-                location.assign('Halaman_buku_tamu.php');   
-            </script>";
+        $_SESSION['update_status'] = 1; //nilai "1"-nya boleh berapa aja
+        $_SESSION['update_message'] = '<strong>Gagal!</strong> Data gagal dimasukkan!';
+    }   
 
-        echo "Gagal tersimpan";
-    }
+    //     // Menampilkan Pop Up BERHASIL TERSIMPAN
+    //     echo "<script>
+    //             alert('Berhasil tersimpan');
+    //             location.assign('Halaman_buku_tamu.php');   
+    //         </script>";
+
+    //     echo "Berhasil tersimpan";
+    // } else {
+    //     // Menampilkan Pop Up GAGAL TERSIMPAN
+    //     echo "<script>
+    //             alert('Berhasil tersimpan');
+    //             location.assign('Halaman_buku_tamu.php');   
+    //         </script>";
+
+    //     echo "Gagal tersimpan";
+    // }
 
 ?>
 
