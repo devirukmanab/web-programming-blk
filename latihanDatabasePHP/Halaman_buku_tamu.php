@@ -30,7 +30,11 @@ require_once "MySQL_connection.php";
                 <h3 style="text-align: center;">Form Input Buku Tamu</h3>
             </div>
             <div class="card-body">
-                <form action="Proses_insert_buku_tamu.php" method="POST">
+                <form action="Proses_update_buku_tamu.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="id" class="form-control" readonly required>
+                    </div>
+
                     <div class="form-group">
                         <input type="text" name="nama" class="form-control" placeholder="Masukkan nama anda" required>
                     </div>
@@ -40,13 +44,14 @@ require_once "MySQL_connection.php";
                     </div>
 
                     <div class="form-group">
-                        <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda"></textarea>
+                        <textarea name="pesan" class="form-control" placeholder="Masukkan pesan dan kesan anda" required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <input type="submit" class="btn btn-info btn-block" value="Kirim">
+                        <input type="submit" class="btn btn-info btn-block" value="Update">
                     </div>
                 </form>
+
 
                 <!-- Membuat Tabel dengan menampilkan isi data -->
                 <table class="table table-bordered" id="myTable">
@@ -108,7 +113,6 @@ require_once "MySQL_connection.php";
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
                     <div class="modal-body">
                         <form>
                             <div class="form-group">
@@ -121,7 +125,6 @@ require_once "MySQL_connection.php";
                             </div>
                         </form>
                     </div>
-
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Send message</button>
@@ -137,7 +140,7 @@ require_once "MySQL_connection.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
     <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
     <!-- Jquery Datatables -->
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
