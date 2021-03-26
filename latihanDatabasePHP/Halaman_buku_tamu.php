@@ -82,12 +82,17 @@ require_once "MySQL_connection.php";
                                     <td><?= $row['pesan_tamu']; ?></td>
                                     <td align="center">
                                         <!-- Button Delete and Edit -->
-                                        <a href="Proses_delete_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus ini?')">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="Halaman_edit_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-dark btn-sm">
-                                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                                        </a>
+                                        <div class="btn-group">
+                                            <a href="Proses_delete_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Anda yakin akan menghapus ini?')">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+
+                                            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> <i class="fa fa-edit" aria-hidden="true"></i></button>
+
+                                            <a href="Halaman_edit_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-dark btn-sm disabled">
+                                                <i class="fa fa-edit" aria-hidden="true"></i>
+                                            </a>
+                                        </div>    
                                     </td>
                                 </tr>
                         <?php
@@ -100,9 +105,9 @@ require_once "MySQL_connection.php";
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button> -->
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
