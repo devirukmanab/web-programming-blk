@@ -1,0 +1,64 @@
+@media screen and (max-width: 1280px) {
+    * {
+        font-family: 'Roboto';
+    }
+
+    /* Put Background Image behind */
+    body {
+        background-image: url("image.jpg");
+        background-position: center;
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .card-body {
+        font-family: 'Poppins';
+    }
+
+    .card {
+        opacity: 75%;
+        width: 450px;
+        border: 1px solid #ccc;
+        padding: 40px;
+        margin: auto;
+        margin-top: 15%;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px #9A9A9A;
+
+    }
+
+    .card h1 {
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+    }
+
+    label {
+        font-size: 13px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+    tr {
+       margin-left: 5px;
+    }
+
+    #username,
+    #pass {
+        width: 100%;
+        padding: 10px 6px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+    #shpass {
+        display: inline;
+    }
+
+    #btn {
+        margin-top: 15px;
+        ;
+    }
+}
