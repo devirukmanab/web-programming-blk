@@ -16,7 +16,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
+
     <!-- Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -81,6 +81,37 @@ session_start();
             margin-top: 15px;
             ;
         }
+
+        /* Mobile Version */
+        @media screen and (max-width: 1280px) {
+            * {
+                font-family: 'Roboto';
+            }
+
+            body {
+            background-image: url("image.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            }
+
+            .card-body {
+                font-family: 'Poppins';
+            }
+
+            .card {
+                opacity: 75%;
+                width: 450px;
+                border: 1px solid #ccc;
+                padding: 40px;
+                margin: auto;
+                margin-top: 15%;
+                border-radius: 10px;
+                box-shadow: 3px 3px 3px #9A9A9A;
+
+            }
+        }
     </style>
 </head>
 
@@ -88,15 +119,15 @@ session_start();
     <!-- Halaman Login -->
     <div class="card">
         <div class="card-body ">
-            <?php if(isset($_SESSION['login'])) : ?>
-            <?php
+            <?php if (isset($_SESSION['login'])) : ?>
+                <?php
 
-            if($_SESSION['login'] == 0) { 
-            ?>
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <?= $_SESSION['login_message']; ?>
-                </div>
-            <?php } ?>
+                if ($_SESSION['login'] == 0) {
+                ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?= $_SESSION['login_message']; ?>
+                    </div>
+                <?php } ?>
 
             <?php endif; ?>
 
@@ -141,7 +172,8 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
     <script>
-         $('.alert').delay(500).fadeOut(2000);
+        $('.alert').delay(500).fadeOut(2000);
     </script>
 </body>
+
 </html>
