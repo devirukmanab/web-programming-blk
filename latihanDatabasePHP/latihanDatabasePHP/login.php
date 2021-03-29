@@ -11,10 +11,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Login Page</title>
     <!-- Style CSS -->
     <style>
@@ -22,6 +27,7 @@ session_start();
             font-family: 'Roboto';
         }
 
+        /* Put Background Image behind */
         body {
             background-image: url("image.jpg");
             background-position: center;
@@ -36,12 +42,14 @@ session_start();
         }
 
         .card {
+            opacity: 75%;
             width: 500px;
             border: 1px solid #ccc;
             padding: 40px;
             margin: auto;
             margin-top: 15%;
-            box-shadow: 5px 5px 5px #9A9A9A;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px #9A9A9A;
 
         }
 
@@ -103,7 +111,7 @@ session_start();
                 <input type="checkbox" name="showpass" id="showpass" onclick="showPass()">
                 <label for="showpass" id="shpass">Show a password</label>
                 <br>
-                <button class="btn btn-primary" id="btn" type="submit">Login</button>
+                <button class="btn btn-primary fa fa-sign-in" id="btn" type="submit"></button>
             </form>
         </div>
     </div>
