@@ -20,9 +20,35 @@ session_start();
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Buku Tamu</title>
+
+    <style>
+        * {
+            font-family: 'Roboto';
+        }
+
+        /* Put Background Image behind */
+        body {
+            background-image: url("image.jpg");
+            background-position: center;
+            min-height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .card {
+            margin-top: 65px;
+            font-family: 'Poppins';
+        }
+    </style>
 </head>
 
 <body>
@@ -32,14 +58,14 @@ session_start();
             <div class="card-header">
                 <!-- PHP Login -->
                 <?php if (isset($_SESSION['login'])) : ?>
-                <?php
+                    <?php
 
-                if ($_SESSION['login'] == 1) {
-                ?>
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <?= $_SESSION['login_message']; ?>
-                    </div>
-                <?php } ?>
+                    if ($_SESSION['login'] == 1) {
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <?= $_SESSION['login_message']; ?>
+                        </div>
+                    <?php } ?>
 
                 <?php endif; ?>
 
@@ -77,13 +103,12 @@ session_start();
                                         } ?> alert-dismissible fade show" role="alert">
                         <?= $_SESSION['update_message']; ?>
                         <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button> -->
+                            <span aria-hidden="true">&times;</span>
+                        </button> -->
                     </div>
                 <?php }
                 unset($_SESSION['update_status']);
                 ?>
-
 
                 <h2 class="text-success">Data Buku Tamu</h2>
 
@@ -99,7 +124,6 @@ session_start();
                             <th>Action</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <?php
                         $sql = "SELECT * FROM tb_tamu ORDER BY id_tamu ASC";
@@ -122,10 +146,6 @@ session_start();
                                             </a>
 
                                             <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal" data-id="<?= $row['id_tamu']; ?>" data-nama="<?= $row['nama_tamu']; ?>" data-email="<?= $row['email_tamu']; ?>" data-pesan="<?= $row['pesan_tamu']; ?>"> <i class="fa fa-edit" aria-hidden="true"></i></button>
-
-                                            <a href="Halaman_edit_buku_tamu.php?idTamu=<?= $row['id_tamu']; ?>" class="btn btn-dark btn-sm disabled">
-                                                <i class="fa fa-edit" aria-hidden="true"></i>
-                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -136,6 +156,9 @@ session_start();
                         ?>
                     </tbody>
                 </table>
+
+                <!-- Log Out -->
+                <a href="login.php" class="btn btn-outline-dark btn-sm fa fa-sign-out"></a>
             </div>
         </div>
 
@@ -171,8 +194,10 @@ session_start();
                             <div class="form-group">
                                 <input type="submit" class="btn btn-info btn-block" value="Update">
                             </div>
+
                         </form>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary">Send message</button>
