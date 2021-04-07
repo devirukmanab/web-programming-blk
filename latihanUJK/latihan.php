@@ -1,3 +1,7 @@
+<?php
+include 'proses.php';
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -105,7 +109,11 @@
 
                             <label for="jr">Jenis Buah</label>
                             <select name="jenisBuah" id="jr">
-                                <option value=""></option>
+                                <?php foreach ($buah as $buahan) :  ?>
+                                <option value="">
+                                <?= $buahan; ?>
+                            </option>
+                                <?php endforeach; ?>
                             </select>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
