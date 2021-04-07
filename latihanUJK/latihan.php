@@ -91,20 +91,20 @@ include 'proses.php';
                     <div class="container">
                         <form action="" method="POST">
                             <label for="nm">Nama Buah</label>
-                            <input type="text" id="nm" name="nama" class="form-control">
+                            <input type="text" id="nm" name="namaBuah" class="form-control">
                             <br>
 
                             <label for="em">Harga Buah</label>
-                            <input type="number" name="email" id="em" class="form-control">
+                            <input type="number" name="hargaBuah" id="em" class="form-control">
                             <br>
 
                             <label for="al">Alamat Pengiriman</label><br>
-                            <textarea name="alamat" id="al" cols="50" rows="10"></textarea>
+                            <textarea name="alamatPembeli" id="al" cols="50" rows="10"></textarea>
                             <br>
 
                             <label for="jk">Potongan Harga</label><br><br>
-                            <input type="radio" name="diskonan" id="jkl" value="Diskon">Diskon
-                            <input type="radio" name="diskonan" id="jkl" value="Tidak Diskon">Tidak Diskon
+                            <input type="radio" name="statusDiskon" id="jkl" value="Diskon">Diskon
+                            <input type="radio" name="statusDiskon" id="jkl" value="Tidak Diskon">Tidak Diskon
                             <br>
 
                             <label for="jr">Jenis Buah</label>
@@ -116,7 +116,7 @@ include 'proses.php';
                                 <?php endforeach; ?>
                             </select>
 
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="data" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                 </div>
