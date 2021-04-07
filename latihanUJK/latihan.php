@@ -103,14 +103,14 @@ include 'proses.php';
                             <br>
 
                             <label for="jk">Potongan Harga</label><br><br>
-                            <input type="radio" name="jensKelamin" id="jkl" value="Diskon">Diskon
-                            <input type="radio" name="jensKelamin" id="jkl" value="Tidak Diskon">Tidak Diskon
+                            <input type="radio" name="diskonan" id="jkl" value="Diskon">Diskon
+                            <input type="radio" name="diskonan" id="jkl" value="Tidak Diskon">Tidak Diskon
                             <br>
 
                             <label for="jr">Jenis Buah</label>
                             <select name="jenisBuah" id="jr">
-                                <?php foreach ($buah as $buahan) :  ?>
-                                <option value="<?= $buahan; ?>">
+                                <?php foreach ($buah as $buahan) :  ?> 
+                                <option value="<?= $buahan; ?>"> <!-- Menambahkan value untuk debugging var_dump -->
                                 <?= $buahan; ?>
                             </option>
                                 <?php endforeach; ?>
