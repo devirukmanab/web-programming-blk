@@ -89,7 +89,7 @@ include 'proses.php';
                 <!-- Suggestions -->
                 <div class="col-12">
                     <div class="container">
-                        <form action="">
+                        <form action="" method="POST">
                             <label for="nm">Nama Buah</label>
                             <input type="text" id="nm" name="nama" class="form-control">
                             <br>
@@ -103,8 +103,8 @@ include 'proses.php';
                             <br>
 
                             <label for="jk">Potongan Harga</label><br><br>
-                            <input type="radio" name="jensKelamin" id="jkl" value="laki">Diskon
-                            <input type="radio" name="jensKelamin" id="jkl" value="perempuan">Tidak Diskon
+                            <input type="radio" name="jensKelamin" id="jkl" value="Diskon">Diskon
+                            <input type="radio" name="jensKelamin" id="jkl" value="Tidak Diskon">Tidak Diskon
                             <br>
 
                             <label for="jr">Jenis Buah</label>
