@@ -110,7 +110,7 @@ include 'proses.php';
                             <label for="jr">Jenis Buah</label>
                             <select name="jenisBuah" id="jr">
                                 <?php foreach ($buah as $buahan) :  ?>
-                                <option value="">
+                                <option value="<?= $buahan; ?>">
                                 <?= $buahan; ?>
                             </option>
                                 <?php endforeach; ?>
